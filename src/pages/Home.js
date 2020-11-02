@@ -1,12 +1,23 @@
+import { useEffect, useState } from "react";
 import Countries from "../components/Countries";
 import Global from "../components/Global";
+import Hero from "../components/Hero";
 
 const Home = () => {
+  const [thisMode, setThisMode] = useState();
+  const [isDarkMode, setIsDarkMode] = useState(thisMode);
+
+  const handleMode = () => {
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem("dark-mode", !isDarkMode);
+  };
   return (
-    <div className="px-5 md:px-20 py-10">
-      <div className=" text-3xl font-semibold text-center p-2">
-        <span className="bg-blue-200 rounded">Covid tracker</span>
-      </div>
+    <div
+      className={
+        isDarkMode ? "px-5 md:px-20 py-10 bg-gray-900" : "px-5 md:px-20 py-10"
+      }
+    >
+      <Hero onChange={handleMode} checked={isDarkMode} />
 
       <div className="mt-16">
         <Global />

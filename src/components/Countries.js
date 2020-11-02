@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Axios from "axios";
 import Stats from "../components/Stats";
+import { data } from "autoprefixer";
 
 const Countries = () => {
   const [confirmed, setConfirmed] = useState();
@@ -8,6 +9,7 @@ const Countries = () => {
   const [recovered, setRecovered] = useState();
   const [countries, setCountries] = useState(() => []);
   const [selected, setSelected] = useState("IDN");
+  const [name, setName] = useState();
   const handleValue = (e) => {
     setSelected(e.target.value);
   };
@@ -44,11 +46,12 @@ const Countries = () => {
         </select>
       </div>
 
-      <section className="sm:flex py-8">
+      <section className="sm:flex py-8 justify-evenly">
         <Stats title="Confirmed" number={confirmed} />
         <Stats title="Deaths" number={deaths} />
         <Stats title="Recovered" number={recovered} />
       </section>
+      <div className="h-64"></div>
     </div>
   );
 };
