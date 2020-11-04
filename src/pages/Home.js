@@ -5,8 +5,10 @@ import Hero from "../components/Hero";
 
 const Home = () => {
   const [thisMode, setThisMode] = useState();
-  const [isDarkMode, setIsDarkMode] = useState(thisMode);
-
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  useEffect(() => {
+    localStorage.setItem("dark", JSON.stringify(isDarkMode));
+  }, [isDarkMode]);
   const handleMode = () => {
     setIsDarkMode(!isDarkMode);
     localStorage.setItem("dark-mode", !isDarkMode);
