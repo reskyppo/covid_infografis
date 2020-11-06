@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import Countries from "../components/Countries";
 import Global from "../components/Global";
 import Hero from "../components/Hero";
+import Prevention from "../components/Prevention";
 
 const Home = () => {
-  const [thisMode, setThisMode] = useState();
   const [isDarkMode, setIsDarkMode] = useState(false);
   useEffect(() => {
     localStorage.setItem("dark", JSON.stringify(isDarkMode));
@@ -27,6 +27,10 @@ const Home = () => {
 
       <div className="mt-16">
         <Countries />
+      </div>
+
+      <div className="mt-16">
+        <Prevention />
       </div>
     </div>
   );

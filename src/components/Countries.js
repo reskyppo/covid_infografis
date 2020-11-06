@@ -51,7 +51,6 @@ const Countries = () => {
         <Stats title="Deaths" number={deaths} />
         <Stats title="Recovered" number={recovered} color />
       </section>
-      <div className="h-64"></div>
     </div>
   );
 };
