@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Countries from "../components/Countries";
+import Footer from "../components/Footer";
 import Global from "../components/Global";
 import Hero from "../components/Hero";
 import Prevention from "../components/Prevention";
@@ -31,6 +32,10 @@ const Home = () => {
 
       <div className="mt-16">
         <Prevention />
+      </div>
+
+      <div className="mt-16">
+        <Footer />
       </div>
     </div>
   );
